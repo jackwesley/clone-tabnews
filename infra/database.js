@@ -26,11 +26,6 @@ async function getNewClient() {
 
   await client.connect();
 
-  console.log({
-    host: process.env.POSTGRES_HOST,
-    nodeEnv: process.env.NODE_ENV,
-  });
-
   return client;
 }
 
