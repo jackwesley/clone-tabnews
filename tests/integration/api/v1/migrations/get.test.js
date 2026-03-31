@@ -1,9 +1,8 @@
-import datanase from "infra/database";
 import orchestrator from "tests/orchestrator";
 
 beforeAll(async () => {
   await orchestrator.waitForAllServices();
-  await datanase.query("drop schema public cascade; create schema public;");
+  await orchestrator.clearDatabase();
 });
 
 describe("GET to api/v1/migrations", () => {
